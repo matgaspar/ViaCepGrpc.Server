@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "ViaCepGrpc.Grpcs";
+
+package viacep;
+
+service ViaCep{
+    rpc GetAddressByCep (ViaCepRequest) returns (ViaCepResponse);
+}
+
+message ViaCepRequest {
+    string cep = 1;
+}
+
+message ViaCepResponse {
+    string cep = 1;
+    string logradouro = 2;
+    string complemento = 3;
+    string bairro = 4;
+    string localidade = 5;
+    string uf = 6;
+    string ibge = 7;
+    string gia = 8;
+    string ddd = 9;
+    string siafi = 10;
+  }
